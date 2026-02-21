@@ -1,0 +1,14 @@
+name: Vulnerability scan (OSV)
+
+on:
+  push:
+    branches: [ master ]
+
+permissions:
+  actions: read
+  security-events: write
+  contents: read
+
+jobs:
+  scan-scheduled:
+    uses: "google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@v2.3.3"
